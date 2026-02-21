@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "example-addon",
+  "version": "1.0.0",
+  "name": "Example Addon",
+  "description": "BlackOut Client Addon",
+  "authors": [ "Limon_TH "],
+  "contact": { "sources": "https://github.com/LimonTH/Blackout-CE" },
+  "license": "GPL-3.0",
+  "icon": "assets/template/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "bodevelopment/client/blackout": [
+      "com.example.template.ExampleAddon"
+    ]
+  },
+  "mixins": [
+    "template.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.4",
+    "fabric-api": "*",
+    "minecraft": "1.21.1"
+  }
+}
