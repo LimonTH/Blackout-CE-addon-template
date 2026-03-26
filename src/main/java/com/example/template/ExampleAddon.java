@@ -1,9 +1,14 @@
 package com.example.template;
 
 import bodevelopment.client.blackout.addon.BlackoutAddon;
+import bodevelopment.client.blackout.module.ParentCategory;
+import bodevelopment.client.blackout.module.SubCategory;
 import bodevelopment.client.blackout.util.BOLogger;
 
+import java.awt.image.BufferedImage;
+
 public class ExampleAddon extends BlackoutAddon {
+    public static SubCategory exampleCategory;
 
     public ExampleAddon() {
         super("Example Addon",
@@ -17,6 +22,7 @@ public class ExampleAddon extends BlackoutAddon {
         /*
             @Paaram Не нужно ничего инициализировать по типу this.modules.add и подобное. всем этим занимается сам клиент...
          */
+        exampleCategory = this.addSubCategory("Example", new ParentCategory("Example"));
         BOLogger.info("Example Addon has been initialized!");
     }
 
