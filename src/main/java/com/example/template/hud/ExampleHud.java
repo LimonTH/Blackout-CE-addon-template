@@ -9,7 +9,7 @@ import bodevelopment.client.blackout.module.setting.Setting;
  */
 public class ExampleHud extends TextElement {
 
-    public final Setting<Mode> mode = this.sgGeneral.e("Mode", Mode.Welcome, "What to display");
+    public final Setting<Mode> mode = this.sgGeneral.enumSetting("Mode", Mode.Welcome, "What to display");
 
     public ExampleHud() {
         super("Example HUD", "Displays a simple greeting");

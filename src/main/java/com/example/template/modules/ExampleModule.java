@@ -4,9 +4,9 @@ import bodevelopment.client.blackout.BlackOut;
 import bodevelopment.client.blackout.event.Event;
 import bodevelopment.client.blackout.event.events.TickEvent;
 import bodevelopment.client.blackout.module.Module;
-import bodevelopment.client.blackout.module.SubCategory;
 import bodevelopment.client.blackout.module.setting.Setting;
 import bodevelopment.client.blackout.module.setting.SettingGroup;
+import com.example.template.ExampleAddon;
 import net.minecraft.text.Text;
 
 /**
@@ -15,11 +15,11 @@ import net.minecraft.text.Text;
 public class ExampleModule extends Module {
     private final SettingGroup sgGeneral = this.addGroup("General");
 
-    public final Setting<Boolean> autoDisable = this.sgGeneral.b("Auto Disable", false, "Disables on death");
-    public final Setting<Mode> mode = this.sgGeneral.e("Mode", Mode.First, "Example enum setting");
+    public final Setting<Boolean> autoDisable = this.sgGeneral.booleanSetting("Auto Disable", false, "Disables on death");
+    public final Setting<Mode> mode = this.sgGeneral.enumSetting("Mode", Mode.First, "Example enum setting");
 
     public ExampleModule() {
-        super("Example Module", "Clean template for new modules", SubCategory.MISC, true);
+        super("Example Module", "Clean template for new modules", ExampleAddon.exampleCategory, true);
     }
 
     @Override
