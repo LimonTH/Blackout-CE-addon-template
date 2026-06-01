@@ -1,78 +1,65 @@
-[English](README.md) | [Русский](#blackout-ce-1211--rus)
+<div align="center">
 
-# Blackout-CE Addon Template (1.21.1) 🌑
+# BlackOut Addon Template
 
-> **Main Project:** [LimonTH/Blackout-CE](https://github.com/LimonTH/Blackout-CE)  
-> This template provides everything you need to start developing your own modules, commands, and HUD elements using the Blackout API.
+**Start developing addons for BlackOut CE · Fabric**
 
----
+![MC](https://img.shields.io/badge/1.21.4-1A1A2E?style=flat-square&labelColor=16213E)
+[![License](https://img.shields.io/badge/GPL--3.0-1A1A2E?style=flat-square&logo=gnu&logoColor=white&labelColor=16213E)](LICENSE)
+[![Java](https://img.shields.io/badge/Java_21-1A1A2E?style=flat-square&logo=openjdk&logoColor=white&labelColor=16213E)](https://adoptium.net)
 
-## 🚀 Getting Started
+[BlackOut CE](https://github.com/LimonTH/Blackout-CE) ·
+[Getting Started](#-getting-started) ·
+[Guide](ADDON_DEV_GUIDE.md) ·
+[Discord](https://discord.gg/GnNBwTMUXp)
 
-1. **Use this template**: Click the "Use this template" button on GitHub to create a new repository.
-2. **Clone**: Download your new repository to your local machine.
-3. **Configure**:
-    - Update `src/main/resources/fabric.mod.json` with your addon ID, name, and description.
-    - Rename the example packages and classes to match your addon's identity.
-4. **Build**: Use the following command to compile your addon:
-    - ./gradlew build
-5. **Install**: Grab the compiled JAR from build/libs/ and place it in your .minecraft/mods folder along with the Blackout-CE client.
+</div>
 
 ---
 
-## 💻 Tech Stack
+## Quick Start
 
-* **Version:** 1.21.1 (Fabric)
-* **Language:** Java
-* **Created by:** Limon_TH
+```bash
+# 1. Clone the template
+git clone https://github.com/LimonTH/Blackout-CE-addon-template
+cd Blackout-CE-addon-template
 
----
+# 2. Build
+./gradlew build
 
-## 📜 License
+# 3. Install
+cp build/libs/*.jar ~/.minecraft/mods/
+```
 
-This project is licensed under the **GNU GPL v3**.  
-This ensures that the code remains open-source and free for the community. If you use parts of this code, you must keep your project open-source under the same license.
+## Structure
 
----
+```
+src/main/java/com/example/template/
+├── ExampleAddon.java      # Entry point (extends BlackoutAddon)
+├── commands/              # Commands (auto-scanned via commandPath)
+├── hud/                   # HUD elements (auto-scanned via hudPath)
+├── mixins/                # Mixins
+└── modules/               # Modules (auto-scanned via modulePath)
+```
 
-*Created with ❤️ by Limon_TH*
+## Extending
 
----
+Read the full **[addon development guide](ADDON_DEV_GUIDE.md)** for:
 
+- Adding modules, commands & HUD elements
+- Custom themes, menu music & backgrounds
+- Event system, notifications & lifecycle hooks
+- ClickGUI screens & version compatibility
 
-# Blackout-CE Addon Template (1.21.1) 🌑 [RUS]
+## Requirements
 
-> **Основной проект:** [LimonTH/Blackout-CE](https://github.com/LimonTH/Blackout-CE)  
-> Этот шаблон предоставляет всё необходимое для начала разработки собственных модулей, команд и элементов HUD с использованием Blackout API.
-
----
-
-## 🚀 Быстрый старт
-
-1. **Использовать шаблон**: Нажмите кнопку «Use this template» на GitHub, чтобы создать новый репозиторий.
-2. **Клонировать**: Скачайте созданный репозиторий на свой компьютер.
-3. **Настроить**:
-    - Обновите файл `src/main/resources/fabric.mod.json`, указав ID, название и описание вашего аддона.
-    - Переименуйте примеры пакетов и классов в соответствии с названием вашего аддона.
-4. **Собрать**: Используйте следующую команду для компиляции вашего аддона:
-    - `./gradlew build`
-5. **Установить**: Возьмите скомпилированный JAR-файл из папки `build/libs/` и поместите его в папку `.minecraft/mods` вместе с клиентом Blackout-CE.
-
----
-
-## 💻 Техническая информация
-
-* **Версия игры:** 1.21.1 (Fabric)
-* **Язык:** Java
-* **Разработчик:** Limon_TH
+- **JDK 21**
+- **BlackOut CE** (in `mods/`)
 
 ---
 
-## 📜 Лицензия
+<div align="center">
 
-Проект распространяется под лицензией **GNU GPL v3**.  
-Это гарантирует, что код останется открытым и бесплатным для сообщества. Если вы используете части этого кода, вы обязаны оставить свой проект открытым под той же лицензией.
+[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/GnNBwTMUXp)
 
----
-
-*Сделано с ❤️ разработчиком Limon_TH*
+</div>

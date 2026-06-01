@@ -7,10 +7,10 @@ import bodevelopment.client.blackout.module.Module;
 import bodevelopment.client.blackout.module.setting.Setting;
 import bodevelopment.client.blackout.module.setting.SettingGroup;
 import com.example.template.ExampleAddon;
-import net.minecraft.text.Text;
+import net.minecraft.network.chat.Component;
 
 /**
- * Минималистичный пример модуля для аддона.
+ * Minimalistic example module for an addon.
  */
 public class ExampleModule extends Module {
     private final SettingGroup sgGeneral = this.addGroup("General");
@@ -25,7 +25,7 @@ public class ExampleModule extends Module {
     @Override
     public void onEnable() {
         if (BlackOut.mc.player != null) {
-            BlackOut.mc.player.sendMessage(Text.of("Example Module Enabled!"), false);
+            BlackOut.mc.player.displayClientMessage(Component.literal("Example Module Enabled!"), false);
         }
     }
 

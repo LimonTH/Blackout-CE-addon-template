@@ -1,12 +1,14 @@
 package com.example.template.commands;
 
 import bodevelopment.client.blackout.command.Command;
+import bodevelopment.client.blackout.util.ChatUtils;
+
 import java.util.List;
 
 public class ExampleCommand extends Command {
 
     public ExampleCommand() {
-        super("example", "Usage: .example <say/stats>");
+        super("example", ".example <say/stats>");
     }
 
     @Override
@@ -16,11 +18,14 @@ public class ExampleCommand extends Command {
         }
 
         if (args[0].equalsIgnoreCase("say")) {
-            return "You said: " + (args.length > 1 ? args[1] : "nothing");
+            String message = args.length > 1 ? args[1] : "nothing";
+            ChatUtils.sendMessage("You said: " + message);
+            return null;
         }
 
         if (args[0].equalsIgnoreCase("stats")) {
-            return "BlackOut Addon is running smoothly!";
+            ChatUtils.sendMessage("BlackOut Addon is running smoothly!");
+            return null;
         }
 
         return "Unknown argument! Use 'say' or 'stats'.";

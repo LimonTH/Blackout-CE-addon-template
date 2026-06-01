@@ -1,19 +1,20 @@
 package com.example.template.hud;
 
 import bodevelopment.client.blackout.BlackOut;
-import bodevelopment.client.blackout.hud.TextElement;
+import bodevelopment.client.blackout.hud.HudElement;
 import bodevelopment.client.blackout.module.setting.Setting;
 
-/**
- * Пример простого текстового элемента HUD для аддона.
- */
-public class ExampleHud extends TextElement {
+import java.awt.Color;
 
-    public final Setting<Mode> mode = this.sgGeneral.enumSetting("Mode", Mode.Welcome, "What to display");
+/**
+ * Example HUD element showing a greeting message.
+ */
+public class ExampleHud extends HudElement {
+
+    public final Setting<Mode> mode = this.addGroup("General").enumSetting("Mode", Mode.Welcome, "What to display");
 
     public ExampleHud() {
         super("Example HUD", "Displays a simple greeting");
-        this.setSize(10.0F, 10.0F);
     }
 
     @Override
@@ -22,12 +23,13 @@ public class ExampleHud extends TextElement {
 
         String mainText = (mode.get() == Mode.Welcome) ? "Hello," : "Welcome back,";
         String playerName = BlackOut.mc.player.getName().getString();
+        String fullText = mainText + " " + playerName;
 
-        float width = BlackOut.FONT.getWidth(mainText + " " + playerName);
+        float width = BlackOut.FONT.getWidth(fullText);
         float height = BlackOut.FONT.getHeight();
         this.setSize(width, height);
 
-        this.drawElement(this.stack, mainText, playerName);
+        BlackOut.FONT.text(this.stack, fullText, 1.0F, 0.0F, 0.0F, Color.WHITE, false, true);
     }
 
     public enum Mode {
